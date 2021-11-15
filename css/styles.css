@@ -131,7 +131,7 @@ ul {
 /* ===== ===== Классы для оформления footer-секции ===== ===== */
 .footer {
   background-color: var(--footer-bg-color);
-  max-width: 1600px;
+  /* max-width: 1600px; */
   margin-left: auto;
   margin-right: auto;
   padding-top: var(--footer-top-bottom-padding);
@@ -419,7 +419,7 @@ ul {
 
 .section.special {
   background-color: var(--team-section-bg-color);
-  max-width: 1600px;
+  /* max-width: 1600px; */
   margin-left: auto;
   margin-right: auto;
 }
