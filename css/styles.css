@@ -18,6 +18,7 @@
   --footer-bg-color: #2f303a;
   --header-line-color: #ececec;
   --project-item-border-color: #eeeeee;
+  --icon-main-color: #a8b1b8;
 
   --header-item-right-margin: 50px;
   --header-top-margin: 24px;
@@ -126,9 +127,12 @@ ul {
   color: var(--logo-bottom-right-color);
 }
 
-/* Классы для оформления footer-секции */
+/* ========== Классы для оформления footer-секции ========== */
 .footer {
   background-color: var(--footer-bg-color);
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: var(--footer-top-bottom-padding);
   padding-bottom: var(--footer-top-bottom-padding);
 }
@@ -161,6 +165,22 @@ ul {
   color: var(--accent-color);
 }
 
+.join-us {
+  display: flex;
+  /* flex-direction: row; */
+}
+
+.join-us::before {
+  content: 'Присоединяйтесь';
+}
+
+.button-icon {
+  width: 44px;
+  height: 44px;
+  fill: rgba(255, 255, 255, 0.1);
+  /* stroke: white; */
+}
+
 /* Стилизация навигации сайта */
 
 .site-nav {
@@ -189,10 +209,35 @@ ul {
 /* Стилизация контактов сайта */
 .site-contacts {
   display: flex;
+  /* align-items: center; */
+}
+
+.site-contacts > .list-item {
+  display: flex;
+  align-items: center;
 }
 
 .site-contacts > .list-item:not(:last-child) {
   margin-right: var(--header-item-right-margin);
+}
+
+.email-icon {
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+  fill: var(--main-text-color);
+}
+
+.phone-icon {
+  width: 10px;
+  height: 16px;
+  margin-right: 10px;
+  fill: var(--main-text-color);
+}
+
+.email-icon:hover,
+.phone-icon:hover {
+  fill: var(--accent-color);
 }
 
 .site-contacts .link {
@@ -218,9 +263,17 @@ ul {
 
 .hero {
   background-color: var(--hero-bg-color);
-
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   padding: 200px 0;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/hero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-title {
@@ -273,6 +326,19 @@ ul {
   margin-right: 0;
 }
 
+.features-logo {
+  width: 270px;
+  height: 120px;
+  background-color: var(--team-section-bg-color);
+  margin-bottom: 30px;
+  padding: 25px 100px;
+}
+
+.features-icon {
+  width: 70px;
+  height: 70px;
+}
+
 .features .title {
   color: var(--title-text-color);
 
@@ -307,6 +373,9 @@ ul {
 
 .section.special {
   background-color: var(--team-section-bg-color);
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .employee {
@@ -326,6 +395,24 @@ ul {
 .employee .card {
   padding-top: 30px;
   padding-bottom: 30px;
+  outline: 1px dotted darkblue;
+}
+
+.employee-network {
+  display: flex;
+  --container-items: 4;
+  margin: 0px 32px 0px;
+
+  outline: 1px dotted darkblue;
+}
+
+.employee-network > .icons {
+  flex-basis: calc(100% / var(--container-items) - 10px);
+  margin-right: 10px;
+}
+
+.employee-network > .icons:last-child {
+  margin-right: 0;
 }
 
 .employee .title {
@@ -342,6 +429,47 @@ ul {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+  margin-bottom: 16px;
+}
+
+/* ========== Классы для оформления секции Постоянные клиенты ========== */
+
+.clients {
+  display: flex;
+  --container-items: 6;
+}
+
+.clients > .item {
+  flex-basis: calc(var(--container-width) / var(--container-items) - var(--container-gutter));
+  margin-right: var(--container-gutter);
+  padding: 16px 32px;
+  border: 1px solid var(--icon-main-color);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.clients > .item:hover {
+  border-color: var(--accent-color);
+}
+
+.clients > .item:last-child {
+  margin-right: 0;
+}
+
+.client-link {
+  display: block;
+  width: 106px;
+  height: 60px;
+  text-align: center;
+  /* outline: 1px dotted blue; */
+}
+
+.client-icon {
+  fill: var(--icon-main-color);
+}
+
+.client-icon:hover {
+  fill: var(--accent-color);
 }
 
 /* Классы для оформления информации о проектах */
